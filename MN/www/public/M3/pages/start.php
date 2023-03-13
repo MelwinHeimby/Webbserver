@@ -1,4 +1,4 @@
-<form method="POST" action="login.php">
+<form method="POST" action="index.php">
 	<h2>Login:</h2>
     <br>
 
