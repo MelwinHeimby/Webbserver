@@ -1,3 +1,9 @@
+<?php if (session_status() === PHP_SESSION_NONE){
+	session_start();
+}
+
+?>
+
 <!doctype html>
 <html lang="sv">
 <head>
@@ -5,6 +11,11 @@
 	<title>Länka in sidor med PHP</title>
 	<link href="css/styleSheet.css" rel="stylesheet" type="text/css">
 </head>
+<header>
+	<?php if ($_SESSION['Logged']){
+		echo $_SESSION['user'];
+	}?>
+</header>
 
 <body>
 	<div id="wrapper">

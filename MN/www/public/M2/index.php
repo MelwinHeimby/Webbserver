@@ -20,16 +20,16 @@
 
         <h2>Register here:</h2>
     <form action="login.php" method="post">
-		<label for="fname">Name:</label><br>
+		<label>Name:</label><br>
 		<input type="text" id="fname" name="fname"><br>
 
-		<label for="lname">Surname:</label><br>
+		<label>Surname:</label><br>
 		<input type="text" id="lname" name="lname"><br>
 
-		<label for="username">Username:</label><br>
+		<label>Username:</label><br>
 		<input type="text" id="username" name="username"><br>
 
-		<label for="password">Password:</label><br>
+		<label>Password:</label><br>
 		<input type="password" id="password" name="password"><br><br>
 
 		<input type="submit" value="register">

@@ -1,3 +1,9 @@
+<?php if (session_status() === PHP_SESSION_NONE){
+	session_start();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<header>
+    <?php if ($_SESSION['Logged']){
+		echo $_SESSION['user'];
+	}?>
+</header>
 <body>
-    doggie
+
 </body>
 </html>
