@@ -1,16 +1,12 @@
 <?php
-    /**
-     * Formaterar och sparar namn samt meddelande till filen
-     * msg.dat
-     * 
-     * Programmet saknar nödvändiga kontroller
-     * @author Henrik Bygren
-     */
-    $cleanName = strip_tags(trim($_POST['name']));
+    if (session_status() === PHP_SESSION_NONE){
+		session_start();
+	}
+
     $cleanMsg = strip_tags(trim($_POST['message']));
     
      
-    $name = "<hr><p>Från: " . $cleanName . "</p>";
+    $name = "<hr><p>Från: " . $_SESSION['user'] . "</p>";
     $msg = "<p>" . $cleanMsg . "</p>";
     
     file_put_contents("msg.dat",$name.$msg,FILE_APPEND);

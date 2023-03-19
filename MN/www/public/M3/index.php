@@ -25,33 +25,36 @@
 			return $this->password;
 		}
 	}
-		
-		$users = [];
-		$file = fopen("users.txt", "r");
-		while($line = fgets($file)) 
-		{
-			$line = trim($line);
-			$user_data = explode(",", $line);
-			$user = new User($user_data[0], $user_data[1]);
-			$users[] = $user;
-		}
-		fclose($file);
+
 	
-		//testa användarnamn och lösenord
-		$username = isset($_POST['username']) ? $_POST['username'] : "";
-		$password = isset($_POST['password']) ? $_POST['password'] : "";
 	
-		foreach($users as $item) 
+	$users = [];
+	$file = fopen("users.txt", "r");
+	while($line = fgets($file)) 
+	{
+		$line = trim($line);
+		$user_data = explode(",", $line);
+		$user = new User($user_data[0], $user_data[1]);
+		$users[] = $user;
+	}
+	fclose($file);
+
+	//testa användarnamn och lösenord
+	$username = isset($_POST['username']) ? $_POST['username'] : "";
+	$password = isset($_POST['password']) ? $_POST['password'] : "";
+
+	foreach($users as $item) 
+	{
+		if($item->getUsername() === $username && $item->getPassword() === $password) 
 		{
-			if($item->getUsername() === $username && $item->getPassword() === $password) 
-			{
-				$_SESSION['Logged'] = true;
-				$_SESSION['user'] = $item->getUsername();
-			}
-			else {
-				
-			}
+			$_SESSION['Logged'] = true;
+			$_SESSION['user'] = $item->getUsername();
 		}
+		else {
+			
+		}
+	}
+
 	
 
 ?>

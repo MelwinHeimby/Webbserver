@@ -10,3 +10,6 @@
     <br>
 	<input type="submit" value="Login">
 </form>
+<br>
+<a href="pages/sign.php">SignUp</a>
+
