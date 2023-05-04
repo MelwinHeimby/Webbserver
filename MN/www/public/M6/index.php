@@ -6,14 +6,7 @@
     <title>EGY Talk</title>
 </head>
 <body>    
-    <?php    
-   	 if(isset($_SESSION['uid'])){
-   		 include 'private.php';
-   		 
-   	 }else{
-   		 include 'public.php';
-   	 }
-    ?>
+    <p>hello</p>
 </body>
 </html>
 
